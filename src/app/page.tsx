@@ -1,103 +1,64 @@
-import Image from "next/image";
+'use client'
+
+
+import dynamic from "next/dynamic";
+import About from "@/components/home/about/About";
+import Products from "@/components/home/products/Products";
+import Wrapper from "@/components/home/Wrapper";
+import Preloader from "@/components/Preloader/Preloader";
+import StickyCursor from "@/components/stickyCursor/StickyCursor";
+import { AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+
+const Hero = dynamic(() => import("@/components/home/hero/Hero"), { ssr: false })
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    (
+      async () => {
+
+        setTimeout(() => {
+          setIsLoading(false);
+          document.body.style.cursor = 'default'
+          window.scrollTo(0, 0);
+        }, 1500)
+      }
+    )()
+  }, [])
+
+  return (
+    <div className="h-full my-16 w-screen relative flex flex-col gap-16">
+      <StickyCursor />
+      <AnimatePresence mode='wait'>
+        {isLoading && <Preloader />}
+      </AnimatePresence>
+      <Hero />
+      <About />
+      <Products />
+      <Wrapper>
+        <div className="p-4 md:p-8 border-x border-primary">
+          <h2 className=" font-bold text-5xl">
+            We are dedicated to sourcing ethical leather and primarily collaborate with LWG-gold certified tanneries. </h2>
+          <p className="font-sans mb-4  mt-16">
+            With our strong, dedicated team, we actively source a diverse range of materials from Europe and Asia to meet the evolving preferences of our clients. Our hardware and components are primarily sourced from China, as well as India and Hong- Kong, and all hardware used is REACH-compliant, ensuring superior quality and safety.
+          </p>
+          <p className=" font-sans mt-4">In line with our sustainability goals, we also integrate eco-friendly alternatives such as Apple Skin, Cactus Leather, PU, and other innovative materials—continually advancing toward more responsible and forward-thinking leather craftsmanship.</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </Wrapper>
+      <Wrapper>
+        <div className=" rounded-xl border border-primary w-full h-[50vh] flex justify-center items-center gap-8 flex-col p-4">
+          <div className="bg-primary w-24 h-1 rounded-full"></div>
+          <h2 className=" font-bold text-5xl uppercase text-center md:text-left">
+            ready to make something amazing?
+          </h2>
+          <Link className='p-4 px-16 rounded-full bg-primary text-white font-sans font-bold w-fit hover:bg-primary/50' href='/contact'>Get In Touch</Link>
+        </div>
+      </Wrapper>
     </div>
   );
 }

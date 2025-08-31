@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
 import "./globals.css";
+import LenisScroll from "@/components/LenisScroll";
+import Header from "@/components/header/Header";
+import Footer from "@/components/home/footer/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const eb_Garamond = EB_Garamond({
+  variable: "--font-eb-gramond",
   subsets: ["latin"],
 });
 
@@ -23,12 +21,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" className=" no-scrollbar">
+      <LenisScroll>
+        <body className={`${eb_Garamond.className} relative w-screen overflow-x-hidden min-h-screen grid`}>
+          <Header />
+          {children}
+          <Footer />
+          <div className=" py-16">
+            <p className=" text-center">@Copyright reserved by Fold Design</p>
+          </div>
+        </body>
+      </LenisScroll>
     </html>
   );
 }
