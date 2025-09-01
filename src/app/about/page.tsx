@@ -9,35 +9,29 @@ import Link from "next/link"
 
 const offers = [
     {
-        title: "Custom goods",
-        detaills: "Custom leather goods manufacturing for private labels."
+        imgsrc: "/images/about/craft.jpg",
+        title: "Generational Craftsmanship",
+        detaills: "Hand-selected hides and hand‑stitched panels by master artisans."
     },
     {
-        title: "Bulk production",
-        detaills: "Bulk production for wholesalers and retailers."
+        imgsrc: "/images/about/prim.jpg",
+        title: "Premium Materials",
+        detaills: "Only full‑grain, responsibly tanned leather for lasting character."
     },
     {
-        title: "OEM & ODM",
-        detaills: "OEM & ODM services tailored to client specifications."
+        imgsrc: "/images/about/sustain.jpg",
+        title: "Sustainable Vision",
+        detaills: "Small‑batch production and waste‑reducing cutting patterns."
     },
     {
-        title: "Worldwide shipping",
-        detaills: "Worldwide export and shipping to over [X] countries"
-    },
-]
-
-const certifications = [
-    {
-        title: "certifications1"
+        imgsrc: "/images/about/custom.jpg",
+        title: "Customization at Scale",
+        detaills: "From monograms to private‑label, we make your ideas tangible."
     },
     {
-        title: "certifications2"
-    },
-    {
-        title: "certifications3"
-    },
-    {
-        title: "certifications4"
+        imgsrc: "/images/about/genu.webp",
+        title: "Lifetime Promise",
+        detaills: "Complimentary repairs and re‑conditioning so it ages beautifully."
     },
 ]
 
@@ -59,10 +53,10 @@ function page() {
         })
     }
     return (
-        <div className="my-16 flex flex-col gap-16">
+        <div className="my-16 flex flex-col gap-16 max-w-screen">
             <Wrapper>
-                <div className="grid gap-4 grid-cols-1 md:grid-cols-[1.61fr_1fr] min-h-[80vh]">
-                    <div className=" flex flex-col justify-between">
+                <div className="grid gap-4 grid-cols-1 md:grid-cols-[1.61fr_1fr]">
+                    <div className=" flex flex-col">
                         <div className="overflow-hidden">
                             <motion.h4
                                 custom={[0.3, 0]}
@@ -72,53 +66,23 @@ function page() {
                                 exit="exit"
                                 className="whitespace-nowrap w-fit text-5xl md:text-[10vw]"
                             >
-                                About us
+                                About us.
                             </motion.h4> </div>
                         <div className=" font-sans flex flex-col gap-4">
-                            <p className="">Welcome to FOLD DESIGN, your trusted partner in premium leather goods manufacturing and exporting. Based in India, we are a globally recognized leather goods manufacturer, wholesale supplier, and private label producer serving brands, retailers, and wholesalers across the world.</p>
-                            <p>We specialize in handcrafted leather bags, wallets, belts, accessories, and custom-made leather products. Our team of skilled artisans combines traditional craftsmanship with modern design techniques to produce export-quality leather goods that meet international standards.</p>
+                            <p className="">FOLD DESIGN is an export house of international repute based in Kolkata, engaged in the manufacture and export of high fashion leather bags and accessories, both for men and women. Since our establishment in 1990, we have deeply embedded the principles of excellence and kaizen to provide high quality products at a reasonable cost to our customers.</p>
+                            <p>Given our focus on quality, we are proudly affiliated as a technical associate of BLC Leather Technology Centre, U.K. The partnership has helped us to keep a strict vigil on our quality parameters and has kept them at par with international standards. As a result of our work on quality and on-time delivery, we have been able to serve the world's leading retailers for over 20 years.</p>
                         </div>
-
-
                     </div>
-                    <div className=" w-full h-full border border-primary rounded-xl overflow-hidden">
-                        <Image
-                            className=' w-full h-full object-cover z-0'
-                            width={500}
-                            height={500}
-                            alt='heroimage'
-                            src="/images/hero/hero.jpg"
-                        />
-                    </div>
-                </div>
-            </Wrapper>
-            <Wrapper>
-                <div className="grid grid-cols-1 md:grid-cols-[1fr_1.61fr] gap-8">
-                    <div className=" w-full h-full border border-primary rounded-xl overflow-hidden">
-                        <Image
-                            className=' w-full h-full object-cover z-0'
-                            width={500}
-                            height={500}
-                            alt='heroimage'
-                            src="/images/hero/about2.jpg"
-                        />
-                    </div>
-                    <div className=" flex flex-col justify-between">
-                        <div className="overflow-hidden">
-                            <motion.h4
-                                custom={[0.3, 0]}
-                                variants={translate}
-                                initial="initial"
-                                whileInView="enter"
-                                exit="exit"
-                                className="whitespace-nowrap w-fit text-5xl md:text-[10vw]"
-                            >
-                                Our Mission
-                            </motion.h4>
+                    <div className=" w-full h-full text-black p-4 md:border-l border-primary md:mt-16">
+                        <div className=" pb-8 border-b border-primary">
+                            <h4 className=" text-3xl font-bold mb-8">Our Vision</h4>
+                            <p className=" font-sans"> Even today, the tag "Made in India" is looked down upon on a global level. Over the years, through our craftsmanship and strict attention to detail, we aim to change this narrative.</p>
                         </div>
-                        <p className=" font-sans mt-8">To preserve the art of authentic leather craftsmanship while offering modern, functional designs that last for years. We aim to be the go-to leather goods supplier for businesses and a trusted brand for customers who value quality over quantity.</p>
+                        <div className=" my-8">
+                            <h4 className=" text-3xl font-bold mb-8">Our Mission</h4>
+                            <p className=" font-sans"> To help uphold the trust and relationship that brands have built with their customers over the years, and overdeliver every step of the way.</p>
+                        </div>
                     </div>
-
                 </div>
             </Wrapper>
             <Wrapper>
@@ -132,17 +96,21 @@ function page() {
                             exit="exit"
                             className="whitespace-nowrap w-fit text-5xl md:text-[10vw]"
                         >
-                            What We Offer
+                            Why choice us.
                         </motion.h4>
                     </div>
-                    <p className=" font-sans mt-8">As both a manufacturer and brand, we understand the needs of businesses and individual customers alike. We offer:</p>
-                    <div className=" font-sans mt-16 border-t border-primary">
+                    <p className=" font-sans mt-8">We hand‑make premium leather goods using full‑grain hides and time‑tested techniques—delivering durability, comfort, and character that only improves with age.</p>
+                    <div className=" font-sans mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                         {
                             offers.map((o, i) =>
-                                <div key={i} className="grid grid-cols-2 md:grid-cols-[1fr_2fr_4fr] gap-y-8 gap-x-4 border-b border-primary min-h-[25vh] py-8">
-                                    <span className="text-primary/50">{`0${i + 1}`}</span>
-                                    <span className=" text-3xl">{o.title}</span>
-                                    <span>{o.detaills}</span>
+                                <div key={i} className=" overflow-hidden relative py-8 gap-8 p-4 grid grid-rows-[2fr_1fr] bg-white shadow hover:scale-105 transition-all">
+                                    <div className=" overflow-hidden border rounded-xl h-full w-full">
+                                        <Image width={500} height={500} alt="" className=" w-full h-full object-cover" src={o.imgsrc} />
+                                    </div>
+                                    <div className="flex flex-col gap-4">
+                                        <h2 className=" text-3xl">{o.title}</h2>
+                                        <p className=" text-primary/80">{o.detaills}</p>
+                                    </div>
                                 </div>
                             )
                         }
@@ -160,18 +128,11 @@ function page() {
                             exit="exit"
                             className="whitespace-nowrap w-fit text-5xl md:text-[10vw]"
                         >
-                            Certifications
+                            Certifications.
                         </motion.h4>
                     </div>
-                    <div className=" font-sans mt-16 border-t border-primary">
-                        {
-                            certifications.map((c, i) =>
-                                <div key={i} className="grid grid-cols-2 md:grid-cols-[1fr_2fr_4fr] gap-y-8 gap-x-4 border-b border-primary min-h-[25vh] py-8">
-                                    <span className="text-primary/50">{`0${i + 1}`}</span>
-                                    <span className=" text-3xl">{c.title}</span>
-                                </div>
-                            )
-                        }
+                    <div className=" font-sans mt-16 border-t border-primary flex justify-center items-center">
+                        <Image width={1000} height={500} alt="" src="/images/about/scrti.jpeg" />
                     </div>
                 </div>
             </Wrapper>

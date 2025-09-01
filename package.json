@@ -1,6 +1,6 @@
 {
-  "name": "client3",
-  "version": "0.1.0",
+  "name": "fold-design",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@radix-ui/react-collapsible": "^1.1.12",
     "@react-three/drei": "^10.7.4",
     "@react-three/fiber": "^9.3.0",
     "class-variance-authority": "^0.7.1",

@@ -9,22 +9,21 @@ import Images from './images/Images';
 const links = [
     {
         title: "Home",
-        href: "/",
+        href: "/#",
         src: "home.jpg"
-    },
-    {
+    }, {
         title: "About Us",
-        href: "/about",
+        href: "/about#",
         src: "about.jpg"
     },
     {
         title: "Contact",
-        href: "/contact",
+        href: "/contact#",
         src: "contact.jpg"
-    }
+    },
 ]
 
-export default function Nav({isActiveToggle}:{isActiveToggle:()=>void}) {
+export default function Nav({ isActiveToggle }: { isActiveToggle: () => void }) {
 
     const [selectedLink, setSelectedLink] = useState({ isActive: false, index: 0 });
 
@@ -37,11 +36,10 @@ export default function Nav({isActiveToggle}:{isActiveToggle:()=>void}) {
             className="overflow-hidden"
         >
             <div className="flex flex-col gap-[50px] mb-[80px] lg:flex-row lg:justify-between">
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-row justify-between">
                     <Body links={links} selectedLink={selectedLink} isActiveToggle={isActiveToggle} setSelectedLink={setSelectedLink} />
-                    <Footer isActiveToggle={isActiveToggle}/>
+                    {/*<Footer isActiveToggle={isActiveToggle} />*/}
                 </div>
-                <Images src={links[selectedLink.index].src} isActive={selectedLink.isActive} />
             </div>
         </motion.div>
     )

@@ -11,7 +11,7 @@ function Section3({ scrollYProgress }: { scrollYProgress: MotionValue<number> })
 
     return (
         <motion.div style={{ scale, rotate }} className=' sticky top-4 h-screen w-full border border-primary rounded-xl p-8 grid place-content-center bg-white/50 backdrop-blur-sm'>
-            <h1 className=' text-5xl md:text-[10vw] text-center uppercase big-cursor w-fit'>25+ years EXPERIENCE</h1>
+            <h1 className=' text-5xl md:text-[10vw] text-center uppercase big-cursor w-fit'>20+ years EXPERIENCE</h1>
         </motion.div>
     )
 }

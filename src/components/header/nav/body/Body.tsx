@@ -33,7 +33,7 @@ const Body: React.FC<BodyProps> = ({ links, selectedLink, setSelectedLink, isAct
   };
 
   return (
-    <div className="flex flex-wrap mt-10 lg:mt-20 h-full">
+    <div className="flex flex-col mt-10 lg:mt-20 h-full">
       {links.map((link, index) => {
         const { title, href } = link;
         return (
@@ -43,7 +43,7 @@ const Body: React.FC<BodyProps> = ({ links, selectedLink, setSelectedLink, isAct
               onMouseLeave={() => setSelectedLink({ isActive: false, index })}
               variants={blur}
               animate={selectedLink.isActive && selectedLink.index !== index ? "open" : "closed"}
-              className="m-0 flex overflow-hidden text-white text-2xl lg:text-[5vw] uppercase font-light pr-8 lg:pr-[2vw] pt-2.5 h-full"
+              className="m-0 flex overflow-hidden text-white text-2xl lg:text-[2.5vw] uppercase font-light pr-8 lg:pr-[2vw] pt-2.5 h-full"
             >
               {getChars(title)}
             </motion.p>

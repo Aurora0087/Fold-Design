@@ -12,10 +12,10 @@ function Section1({ scrollYProgress }: { scrollYProgress: MotionValue<number> })
     const rotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
 
     return (
-        <motion.div style={{ scale, rotate }} className=' sticky top-4 h-screen w-full border border-primary rounded-xl p-4 md:p-8 grid gap-4 grid-cols-1 md:grid-cols-[1.61fr_1fr]'>
+        <motion.div style={{ scale, rotate }} className=' sticky top-4 h-screen w-full border border-primary rounded-xl p-4 md:p-8 grid gap-8 md:gap-4 grid-cols-1 md:grid-cols-[1.61fr_1fr]'>
             <div className=''>
-                <h3 className=' text-xl md:text-5xl font-bold text-black md:mb-8'>Crafting Excellence in Leather Goods for Global Brands</h3>
-                <p className=' font-sans mb-8 md:mb-16 md:mt-[25vh]'>We are a premier manufacturer and exporter of world class leather goods, based in Kolkata and trusted by iconic international brands. With a professionally managed operation, we specialize in crafting high quality handbags and small leather goods that meet global standards.</p>
+                <h3 className=' text-3xl md:text-5xl font-bold text-black mb-8'>Crafting Excellence in Leather Goods for Global Brands</h3>
+                <p className=' font-sans mb-8 md:mb-16'>We are a premier manufacturer and exporter of world class leather goods, based in Kolkata and trusted by iconic international brands. With a professionally managed operation, we specialize in crafting high quality handbags and small leather goods that meet global standards.</p>
                 <Link className='p-4 px-16 mb-4 rounded-full bg-primary text-white font-sans font-bold hover:bg-primary/50' href='/about'>Learn More</Link>
             </div>
             <div className='rounded-xl overflow-hidden grid grid-rows-[1.61fr_1fr] border border-primary'>
