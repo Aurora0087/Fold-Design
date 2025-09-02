@@ -20,12 +20,9 @@ function Section1() {
                     <span>Inquire Now</span> <MoveRight />
                 </motion.a>
             </div>
-            <div className='overflow-hidden rounded grid grid-cols-1'>
+            <div className='overflow-hidden rounded-xl grid grid-cols-1'>
                 <div className=' w-full h-full overflow-hidden'>
-                    <Image width={500} height={500} src="/images/hero/about1.jpeg" alt='' className=' grayscale-100 w-full h-full object-cover' />
-                </div>
-                <div className='hidden md:flex w-full h-full overflow-hidden'>
-                    <Image width={500} height={500} src="/images/hero/about2.jpeg" alt='' className=' grayscale-100 w-full h-full object-cover' />
+                    <Image width={500} height={500} src="/images/hero/human1.jpeg" alt='' className=' grayscale-100 w-full h-full object-cover' />
                 </div>
             </div>
         </motion.div>

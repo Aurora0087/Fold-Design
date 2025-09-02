@@ -18,40 +18,11 @@ export type ProcuctSliderProps = {
 }
 
 const sampleProducts: Product[] = [
-    {
-        id: "p2",
-        image: "/images/products/p2.jpeg",
-        alt: "p2",
-    },
+
     {
         id: "p4",
         image: "/images/products/p4.jpeg",
         alt: "p4",
-    },
-    {
-        id: "p6",
-        image: "/images/products/p6.jpeg",
-        alt: "p6",
-    },
-    {
-        id: "p7",
-        image: "/images/products/p7.jpeg",
-        alt: "p7",
-    },
-    {
-        id: "p8",
-        image: "/images/products/p8.jpeg",
-        alt: "p8",
-    },
-    {
-        id: "p9",
-        image: "/images/products/p9.jpeg",
-        alt: "p9",
-    },
-    {
-        id: "p10",
-        image: "/images/products/p1.jpeg",
-        alt: "p10",
     },
     {
         id: "p11",
@@ -59,61 +30,15 @@ const sampleProducts: Product[] = [
         alt: "p11",
     },
     {
-        id: "p13",
-        image: "/images/products/p13.jpeg",
-        alt: "p13",
-    },
-    {
-        id: "p14",
-        image: "/images/products/p14.jpeg",
-        alt: "p14",
-    },
-    {
-        id: "p18",
-        image: "/images/products/p18.jpeg",
-        alt: "p18",
-    },
-    {
-        id: "p19",
-        image: "/images/products/p19.jpeg",
-        alt: "p19",
-    },
-    {
-        id: "p20",
-        image: "/images/products/p20.jpeg",
-        alt: "p20",
-    },
-    {
-        id: "p21",
-        image: "/images/products/p21.jpeg",
-        alt: "p21",
-    },
-    {
-        id: "p22",
-        image: "/images/products/p22.jpeg",
-        alt: "p22",
-    },
-    {
-        id: "p23",
-        image: "/images/products/p23.jpeg",
-        alt: "p23",
-    },
-    {
-        id: "p24",
-        image: "/images/products/p24.jpeg",
-        alt: "p24",
+        id: "p10",
+        image: "/images/products/p10.jpeg",
+        alt: "p10",
     },
     {
         id: "p25",
         image: "/images/products/p25.jpeg",
         alt: "p25",
     },
-    {
-        id: "p26",
-        image: "/images/products/p26.jpeg",
-        alt: "p26",
-    },
-
 ]
 
 export default function ProcuctSlider({

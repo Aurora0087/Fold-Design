@@ -17,12 +17,16 @@ function Hero() {
 
     return (
         <div className=' w-full h-[98vh] fixed top-0'>
-            <div className=' absolute top-0 w-full h-24 overflow-hidden grid grid-cols-2 md:grid-cols-3 p-2 md:px-24'>
+            <div className=' absolute top-0 left-0 w-full h-24 overflow-hidden grid grid-cols-[2fr_1fr] md:grid-cols-3 p-2 md:px-24 z-[100]'>
                 <div className='hidden md:flex'></div>
                 <div className='md:flex justify-center items-center'>
-                    <a href="/" className='flex font-sans text-white text-xl'>
-                        <div className='w-16 h-16 overflow-hidden'>
-                            <Image width={100} height={100} alt='logo' src="/FDLOGO.png" className='w-full h-full object-cover' />
+                    <a href="/" className='flex font-sans items-center justify-center text-white text-xl'>
+                        <div className='w-12 h-12 overflow-hidden'>
+                            <Image width={100} height={100} alt='logo' src="/FDLOGO.png" className='w-full h-full object-contain' />
+                        </div>
+                        <div className=' grid ml-2'>
+                            <span className=' font-bold'>Fold Design</span>
+                            <span className=' text-xs '>Crafted to Endure. Designed to Impress.</span>
                         </div>
                     </a>
 
@@ -34,11 +38,11 @@ function Hero() {
                     </motion.a>
                     <Sheet>
                         <SheetTrigger asChild>
-                            <div className=' w-fit h-fit rounded-full aspect-square p-2 bg-white hover:text-primary/50'>
+                            <button className=' cursor-pointer w-fit h-fit rounded-full aspect-square p-2 bg-white hover:text-primary/50'>
                                 <MapPin className=' w-8 h-8' />
-                            </div>
+                            </button>
                         </SheetTrigger>
-                        <SheetContent side='left' className="md:max-w-[50vw] max-w-[100vw] sm:max-w-[100vw]">
+                        <SheetContent side='left' className=' md:max-w-[50vw]'>
                             <SheetHeader>
                                 <SheetTitle className=' my-4 md:my-16 text-5xl font-bold'>Connect With Us</SheetTitle>
                                 <div className=' grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full font-sans text-white'>
@@ -82,9 +86,9 @@ function Hero() {
                     </Sheet>
                 </div>
             </div>
-            <div className=' absolute  z-10 left-2 md:left-28 h-full w-fit flex flex-col justify-center text-white'>
+            <div className=' absolute z-10 top-[-10vh] md:top-auto left-2 md:left-28 h-full w-fit flex flex-col justify-center text-white'>
                 <h4 className=' uppercase w-fit text-2xl md:text-[4vw]'>Premium Handcrafted</h4>
-                <h1 className=' uppercase text-5xl md:text-[8vw] font-bold big-cursor'>Bags & Wallets</h1>
+                <h1 className=' uppercase text-5xl md:text-[8vw] font-bold big-cursor'>Leather & Leather Goods</h1>
                 <p className=' font-sans px-2 w-fit md:w-full md:px-8 py-2 rounded bg-primary text-white text-xs md:text-base'>Where Tradition, innovation and Quality Come Together.</p>
             </div>
             <Image
@@ -92,7 +96,7 @@ function Hero() {
                 width={5000}
                 height={5000}
                 alt='heroimage'
-                src="/images/hero/human1.jpeg"
+                src="/images/hero/hero3.jpeg"
             />
         </div>
     );
