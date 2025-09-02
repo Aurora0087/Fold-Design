@@ -1,78 +1,45 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import React, { useRef } from 'react'
+import Experience from './Experience';
+import ProcuctSlider from './ProcuctSlider';
+import Getintuch from './Getintuch';
+import Contactus from '../contact/Contactus';
 
 function Products() {
-
-    const container = useRef(null);
-
-    const { scrollYProgress } = useScroll({
-
-        target: container,
-
-        offset: ['start start', 'end end']
-
-    })
-
-
-
-    const scale1 = useTransform(scrollYProgress, [0, 1], [1, 4]);
-    const scale2 = useTransform(scrollYProgress, [0, 1], [1, 5]);
-    const scale3 = useTransform(scrollYProgress, [0, 1], [1, 6]);
-    const scale4 = useTransform(scrollYProgress, [0, 1], [1, 7]);
-    const scale5 = useTransform(scrollYProgress, [0, 1], [1, 8]);
-    const scale6 = useTransform(scrollYProgress, [0, 1], [1, 9]);
-
-    const imgs = [
-        {
-            src: "/images/hero/about6.jpg",
-            scale: scale1,
-        },
-        {
-            src: "/images/hero/about1.jpg",
-            scale: scale2
-        },
-        {
-            src: "/images/hero/about2.jpg",
-            scale: scale3
-        },
-        {
-            src: "/images/hero/about3.jpg",
-            scale: scale4
-        },
-        {
-            src: "/images/hero/about4.jpg",
-            scale: scale5
-        },
-        {
-            src: "/images/hero/about5.jpg",
-            scale: scale6
-        },
-    ]
-
     return (
-        <div ref={container} className=" mt-[10vh]">
-            <div className="h-[300vh] relative">
-                <div className=" sticky overflow-hidden top-0 h-[100vh]">
-                    {imgs.map((img, i) => (
-                        <motion.div key={i} style={{ scale: img.scale }} className="w-full h-full top-0 absolute flex items-center justify-center product-el">
-                            <div className={`relative rounded-lg overflow-hidden shadow-2xl imgCont${i + 1}`}>
-                                <Image
-                                    className='object-cover w-full h-full'
-                                    src={img.src}
-                                    alt="image"
-                                    width={500}
-                                    height={500}
-                                />
-                            </div>
-                        </motion.div>
-                    ))}
+        <div className="relative min-h-[600vh] bg-white">
+            <Experience />
+            <ProcuctSlider />
+            <div className='sticky top-0 h-fit w-full bg-white'>
+                <Image width={5000} height={1000} alt="" src="/images/certi.png" className=' w-full h-full object-cover' />
+            </div>
+            <Getintuch />
+            <div className='sticky top-0 max-h-screen w-full bg-white grid-cols-1 p-4'>
+                <div className=' w-full grid grid-cols-2 overflow-hidden h-[40vh]'>
+                    <div className=' w-full h-full overflow-hidden grid place-content-center'>
+                        <Image width={500} height={100} alt="" src="/images/products/p26.jpeg" className='object-cover' />
+                    </div>
+                    <div className=' w-full h-full overflow-hidden grid place-content-center'>
+                        <Image width={500} height={100} alt="" src="/images/products/p20.jpeg" className=' object-center' />
+                    </div>
+                </div>
+                <div className=' w-full h-[40vh] overflow-hidden grid grid-cols-3'>
+                    <div className=' w-full h-full overflow-hidden'>
+                        <Image width={5000} height={1000} alt="" src="/images/products/p24.jpeg" className=' w-full h-full object-contain' />
+                    </div>
+                    <div className=' w-full h-full overflow-hidden'>
+                        <Image width={5000} height={1000} alt="" src="/images/products/p11.jpeg" className=' w-full h-full object-contain' />
+                    </div>
+                    <div className=' w-full h-full overflow-hidden'>
+                        <Image width={5000} height={1000} alt="" src="/images/products/p25.jpeg" className=' w-full h-full object-contain' />
+                    </div>
                 </div>
 
             </div>
-
+            <div className='sticky top-0 min-h-screen w-full bg-white p-8'>
+                <Contactus />
+            </div>
         </div>
     )
 }

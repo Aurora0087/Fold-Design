@@ -1,39 +1,31 @@
 'use client'
 
 import { motion, MotionValue, useTransform } from 'framer-motion'
+import { MoveRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
-function Section1({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
-
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-
-    const rotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
+function Section1() {
 
     return (
-        <motion.div style={{ scale, rotate }} className=' sticky top-4 h-screen w-full border border-primary rounded-xl p-4 md:p-8 grid gap-8 md:gap-4 grid-cols-1 md:grid-cols-[1.61fr_1fr]'>
-            <div className=''>
-                <h3 className=' text-3xl md:text-5xl font-bold text-black mb-8'>Crafting Excellence in Leather Goods for Global Brands</h3>
-                <p className=' font-sans mb-8 md:mb-16'>We are a premier manufacturer and exporter of world class leather goods, based in Kolkata and trusted by iconic international brands. With a professionally managed operation, we specialize in crafting high quality handbags and small leather goods that meet global standards.</p>
-                <Link className='p-4 px-16 mb-4 rounded-full bg-primary text-white font-sans font-bold hover:bg-primary/50' href='/about'>Learn More</Link>
+        <motion.div className=' sticky top-0 h-screen w-full bg-white p-8 md:p-28 md:my-16 flex md:grid gap-8 md:gap-4 flex-col-reverse md:grid-cols-[1.61fr_1fr]'>
+            <div className='md:p-16'>
+                <h3 className=' text-3xl md:text-5xl font-bold text-primary mb-8'>Crafting Excellence in Leather Goods for Global Brands</h3>
+                <p className=' font-sans mb-4'>We are a premier manufacturer and exporter of world class leather goods, based in Kolkata and trusted by iconic international brands. With a professionally managed operation, we specialize in crafting high quality handbags and small leather goods that meet global standards.</p>
+                <p className=' font-sans mb-4'>Our commitment to exceptional quality and customer satisfaction drives every step of our business. Powered by the expertise of our skilled artisans and cutting-edge Italian and German machinery, we ensure precision and excellence in every piece.</p>
+                <p className=' font-sans mb-8 md:mb-16'>From manufacturing to packaging and dispatch, our entire production process is conducted under strict quality control, prioritizing health and employee safety while upholding our commitment to environmental sustainability.</p>
+
+                <motion.a whileHover={{ y: -5 }} className='p-4 px-16 mb-4 rounded-full bg-primary text-white font-sans font-bold flex items-center justify-center gap-2 w-fit' href='#contact' >
+                    <span>Inquire Now</span> <MoveRight />
+                </motion.a>
             </div>
-            <div className='rounded-xl overflow-hidden grid grid-rows-[1.61fr_1fr] border border-primary'>
-                <div className=' w-full h-full overflow-hidden border-b border-primary'>
-                    <Image width={500} height={500} src="/images/hero/about1.jpg" alt='' className=' w-full h-full object-cover' />
+            <div className='overflow-hidden rounded grid grid-cols-1'>
+                <div className=' w-full h-full overflow-hidden'>
+                    <Image width={500} height={500} src="/images/hero/about1.jpeg" alt='' className=' grayscale-100 w-full h-full object-cover' />
                 </div>
-                <div className=' w-full h-full overflow-hidden grid grid-cols-[1fr_1.61fr]'>
-                    <div className=' w-full h-full overflow-hidden grid grid-rows-[1fr_1.61fr]'>
-                        <div className=' w-full h-full overflow-hidden'>
-                            <Image width={500} height={500} src="/images/hero/about4.jpg" alt='' className=' w-full h-full object-cover' />
-                        </div>
-                        <div className=' w-full h-full overflow-hidden'>
-                            <Image width={500} height={500} src="/images/hero/about3.jpg" alt='' className=' w-full h-full object-cover' />
-                        </div>
-                    </div>
-                    <div className=' w-full h-full overflow-hidden'>
-                        <Image width={500} height={500} src="/images/hero/about2.jpg" alt='' className=' w-full h-full object-cover' />
-                    </div>
+                <div className='hidden md:flex w-full h-full overflow-hidden'>
+                    <Image width={500} height={500} src="/images/hero/about2.jpeg" alt='' className=' grayscale-100 w-full h-full object-cover' />
                 </div>
             </div>
         </motion.div>

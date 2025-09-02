@@ -39,43 +39,9 @@ function Contactus() {
 
     return (
         <Wrapper>
-            <div className="h-full rounded-xl w-full grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-y-4 gap-x-8 p-4 md:p-8">
-                <div className="border border-primary rounded-xl p-4">
-                    <h2 className="text-5xl mb-16">Call Us or fill the form</h2>
-                    <div className=" flex flex-col gap-8 font-sans">
-                        <div className=" flex gap-4 items-center">
-                            <Phone className=" w-8 h-8 text-green-400" />
-                            <div className="flex flex-col">
-                                <span className=" font-bold">Don't hesitate to contact us</span>
-                                <div className=" flex flex-wrap gap-4">
-                                    <a href="tel:+919163649163" className="hover:text-black/50">+919163649163</a>
-                                    <a href="tel:+919331863123" className="hover:text-black/50">+919331863123</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className=" flex gap-4 items-center">
-                            <Mail className=" w-8 h-8 text-red-400" />
-                            <div className="flex flex-col">
-                                <div className=" font-bold">Email:</div>
-                                <a href='mailto:fd.folddesign@gmail.com' className=' hover:text-black/50'>fd.folddesign@gmail.com</a>
-                                <a href='mailto:zayankaizer@fold-design.com' className=' hover:text-black/50'>zayankaizer@fold-design.com</a>
-                            </div>
-                        </div>
-                        <div className=" flex gap-8 py-4 border-t border-primary items-center justify-center">
-                            <a href="https://www.instagram.com/fd.folddesign?igsh=MXByZ3R5ZDhvN3hxdw%3D%3D" target="_blank" className=" text-red-400 hover:text-primary">
-                                <Instagram className=" w-8 h-8" />
-                            </a>
-                            <a href="https://www.linkedin.com/company/fold-design/?viewAsMember=true" target="_blank" className=" text-blue-400 hover:text-primary">
-                                <FaLinkedin width={40} height={40} className=" w-8 h-8" />
-                            </a>
-                            <a href="mailto:fd.folddesign@gmail.com" target="_blank" className=" text-red-400 hover:text-primary">
-                                <Mail className=" w-8 h-8" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 className="text-5xl md:text-[10vw] text-primary text-balance">Get In Touch</h2>
+            <div id="contact" className="h-full rounded-xl w-full grid place-content-center gap-x-8 p-4 md:p-8">
+                <div className=" w-fit">
+                    <h2 className="text-5xl md:text-[10vw] text-primary text-balance">CONTACT US</h2>
                     <p className=" font-sans text-black/50">
                         Please Send us an email, If You have a question or would like to start cooperation with us.</p>
 
@@ -159,6 +125,10 @@ function Contactus() {
                     </form>
                 </div>
 
+            </div>
+
+            <div className=" py-2 md:py-8">
+                <p className=" text-center font-sans">@Copyright reserved by Fold Design</p>
             </div>
         </Wrapper>
     )
