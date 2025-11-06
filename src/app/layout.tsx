@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className=" no-scrollbar">
       <LenisScroll>
-        <body className={`${bebas_neue.className} relative max-w-screen overflow-x-hidden min-h-screen grid opacity-20 blur-md`}>
+        <body className={`${bebas_neue.className} relative max-w-screen overflow-x-hidden min-h-screen grid`}>
           {children}
         </body>
       </LenisScroll>
