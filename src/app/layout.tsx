@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { EB_Garamond, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import LenisScroll from "@/components/LenisScroll";
-import Header from "@/components/header/Header";
 
 const eb_Garamond = EB_Garamond({
   variable: "--font-eb-gramond",
@@ -23,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className=" no-scrollbar">
       <LenisScroll>
-        <body className={`${bebas_neue.className} relative max-w-screen overflow-x-hidden min-h-screen grid`}>
+        <body className={`${bebas_neue.className} relative max-w-screen overflow-x-hidden min-h-screen grid opacity-20 blur-md`}>
           {children}
         </body>
       </LenisScroll>
